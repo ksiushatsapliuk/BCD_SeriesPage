@@ -1,0 +1,103 @@
+/* Загальні стилі для body */
+body {
+    background-color: #d770b7 !important; /* фон сторінки */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    margin: 20px;
+}
+
+/* Заголовки H1-H3 */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: #370024;
+    text-align: center;
+    line-height: 1.4;
+}
+/* Заголовок H2 з унікальним ідентифікатором */
+h2#intro {
+    font-family: 'Georgia', serif;
+    color: #72004a;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Посилання */
+a {
+    font-family: 'Georgia', serif;
+    color: #ffe3fa;
+    text-decoration: none;
+}
+
+a.titled {
+    font-family: 'Georgia', serif;
+    color: #72004a;
+    text-align: center;
+    line-height: 1.4;
+}
+
+#top {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+/* Списки */
+ul, ol {
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    list-style-type: square;
+    color: #370024;
+}
+
+ol li {
+    list-style-type: decimal;
+    color: #370024;
+}
+
+/* Списки визначень */
+dl dt {
+    font-weight: bold;
+    color: #370024;
+}
+dl dd {
+    font-style: italic;
+    margin-left: 40px;
+    color: #000;
+}
+
+/* Таблиці */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    border: 1px solid #d770b7;
+}
+
+th {
+    background-color: #ffe3fa;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffedfd;
+}
+caption {
+    font-family: 'Georgia', serif;
+    color: #370024;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
