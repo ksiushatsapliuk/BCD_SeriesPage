@@ -101,3 +101,29 @@ caption {
     margin-bottom: 10px;
     font-size: 18px;
 }
+
+/* Контекстний селектор: заголовки таблиць */
+table th {
+    color: #e10092;
+}
+
+/* Контекстний селектор: italic у списках */
+ul i {
+    font-family: 'Georgia', serif;
+    color: #370024;
+    font-weight: bold;
+}
+
+/* Дочірній селектор: приклад у index.html
+    текст р всередині списку не прямий нащадок div*/
+div > p {
+    font-family: 'Georgia', serif;
+    color: #370024;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Сусідній селектор: приклад у plot.html */
+h3 + p {
+    font-style: italic;
+}
