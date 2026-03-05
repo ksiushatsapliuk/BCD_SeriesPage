@@ -80,11 +80,11 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #d770b7;
+    border: 1px solid #ff8cdb;
 }
 
 th {
-    background-color: #ffe3fa;
+    background-color: #540045;
     padding: 10px;
 }
 
@@ -92,7 +92,7 @@ td {
     padding: 8px;
     text-align: center;
     vertical-align: middle;
-    background-color: #ffedfd;
+    background-color: #b65998;
 }
 caption {
     font-family: 'Georgia', serif;
@@ -101,6 +101,8 @@ caption {
     margin-bottom: 10px;
     font-size: 18px;
 }
+
+/*LAB 4*/
 
 /* Контекстний селектор: заголовки таблиць */
 table th {
@@ -126,4 +128,148 @@ div > p {
 /* Сусідній селектор: приклад у plot.html */
 h3 + p {
     font-style: italic;
+}
+
+/*LAB 5*/
+
+/* === ПСЕВДОКЛАСИ ДЛЯ ПОСИЛАНЬ === */
+
+/* :link - невідвідане посилання */
+a:link {
+    color: #ffe3fa;
+    text-decoration: none;
+}
+
+/* :visited - відвідане посилання */
+a:visited {
+    color: #fecfec;
+    text-decoration: none;
+}
+
+/* :hover - при наведенні */
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+}
+
+/* :active - при натисканні */
+a:active {
+    color: #ffedfd;
+}
+
+/* Навігаційні посилання - :hover з підсвіткою */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+nav {
+    top: 0;
+    background-color: rgba(215, 112, 183, 0.95);
+    padding: 10px 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(55, 0, 36, 0.3);
+}
+
+/* === ВЕРХНЯ СЕКЦІЯ === */
+
+.top {
+    position: relative;      /* використання position */
+    width: 100%;
+    overflow: hidden;        /* очищення float */
+}
+
+/* текст */
+.top .about:first-child {
+    width: 45%;
+    float: left;
+    margin: 2%;
+}
+
+/* картинка */
+.top .about:last-child {
+    width: 50%;
+    float: right;
+    margin-top: 1%;
+}
+
+/* === СЕРЕДНЯ СЕКЦІЯ === */
+
+.middle {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* блок з відео */
+.middle .about:first-child {
+    width: 45%;
+    float: left;
+    margin-left: 5%;
+}
+
+/* блок з текстом */
+.middle .about:last-child {
+    width: 45%;
+    float: left;
+    margin-top: 4%;
+}
+
+
+/* === SPAN — рядковий елемент === */
+
+/* Клас для виділення ключових слів у тексті через <span> */
+span.highlight {
+    background-color: rgba(131, 0, 102, 0.2);
+    color: #370024;
+    font-weight: bold;
+    padding: 0 3px;
+    border-radius: 3px;
+    font-style: normal;
+}
+
+/* Підписи у таблиці через span */
+span.role-label {
+    display: inline-block;
+    background: #ffe3fa;
+    color: #830066;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-top: 4px;
+    font-family: 'Georgia', serif;
+}
+
+/* === ПСЕВДОЕЛЕМЕНТИ ::before та ::after === */
+
+/* ::before для заголовків h2 - декоративна іконка */
+h2::before {
+    content: "✦ ";
+    color: #830066;
+    font-size: 0.85em;
+}
+
+/* ::after для заголовків h2 */
+h2::after {
+    content: " ✦";
+    color: #830066;
+    font-size: 0.85em;
+}
+
+/* ::after для посилань .titled - стрілка-підказка */
+a.titled::after {
+    content: " →";
+    font-size: 0.9em;
+    color: #830066;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+/* ::before для виноски "To the top" */
+a[href="#top"]::before {
+    content: "↑ ";
+    font-weight: bold;
+    color: #ffe3fa;
 }
