@@ -5,6 +5,12 @@
     <title>Why Women — Series</title>
     <meta name="author" content="Oksana Tsapliuk">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+            alert("Welcome to the «Why Women Kill» series page!");
+        };
+    </script>
 </head>
 <body>
     <img src="Why_Women_Kill.png" width="500" id="top"></img>
@@ -94,8 +100,26 @@
     <p style="color: #86e9ff; font-style: italic; font-size: 18px;">Overall, the series can be described as an anthology with elements of a soap opera, 
         using these genres to explore themes of marital infidelity, revenge, and social 
         expectations in different historical eras.</p>
-
+        
     <iframe width="1300" height="500" src="https://en.wikipedia.org/wiki/Why_Women_Kill">Wikipedia</iframe>
     <a href="#top"><br>To the top</a>
-</body>
+
+
+    <!-- ЛАБ 6: Панель кнопок для демонстрації JS-функцій -->
+    <div class="js-demo-panel">
+        <h2>JavaScript Demo Panel</h2>
+        <p style="text-align:center; color:#370024; font-family:'Georgia',serif;">
+            Select buttonsbelow to check the functions:
+        </p>
+        <div class="js-btn-row">
+            <button class="js-btn" onclick="dialogWithUser()">Tell about yourself!</button>
+            <button class="js-btn" onclick="showDeveloperInfo('Oksana', 'Tsapliuk', 'Student')">Developer information</button>
+            <button class="js-btn" onclick="compareTwoStrings('Why Women Kill', 'Series')">Compare strings</button>
+            <button class="js-btn" onclick="changeBackgroundFor30s()">Change background for 30s</button>
+            <button class="js-btn" onclick="redirectToWikipedia()">Go to Wikipedia!</button>
+            <button class="js-btn" onclick="domInspector()">DOM inspector</button>
+            <button class="js-btn" onclick="addDynamicContent()">See hidden message!</button>
+        </div>
+    </div>
+ </body>
 </html>

@@ -1,6 +1,6 @@
 /* Загальні стилі для body */
 body {
-    background-color: #d770b7 !important; /* фон сторінки */
+    background-color: #d770b7; /* фон сторінки */
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -173,6 +173,53 @@ nav {
     box-shadow: 0 2px 8px rgba(55, 0, 36, 0.3);
 }
 
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;     
+}
+
+.js-btn-row {
+    text-align: center;
+    padding: 10px 15px;
+}
+ 
+/* кнопки у стилі nav-посилань */
+.js-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    color: #ffe3fa;          /* колір як у nav a */
+    font-size: 16px;
+    padding: 10px 15px;
+}
+ 
+/* Hover як у nav a:hover */
+.js-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+}
+ 
+/* контейнер панелі */
+.js-demo-panel {
+    background-color: rgba(215, 112, 183, 0.95);
+    box-shadow: 0 2px 8px rgba(55, 0, 36, 0.3);
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+ 
+/* заголовок панелі */
+.js-demo-panel h2 {
+    color: #ffe3fa;
+}
+
 /* === ВЕРХНЯ СЕКЦІЯ === */
 
 .top {
@@ -195,6 +242,13 @@ nav {
     margin-top: 1%;
 }
 
+.top .about:first-child,
+.top .about:last-child {
+    box-sizing: border-box;  /* padding не збільшує ширину */
+    min-width: 200px;        /* мінімальна ширина колонки */
+}
+
+
 /* === СЕРЕДНЯ СЕКЦІЯ === */
 
 .middle {
@@ -210,6 +264,12 @@ nav {
     margin-left: 5%;
 }
 
+video {
+    max-width: 100%;   /* відео не виходить за .about */
+    display: block;
+    margin: 0 auto;
+}
+
 /* блок з текстом */
 .middle .about:last-child {
     width: 45%;
@@ -217,6 +277,20 @@ nav {
     margin-top: 4%;
 }
 
+iframe {
+    width: 80%;          /* було: width="1300" в атрибуті */
+    max-width: 100%;      /* не виходить за межі body */
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ff8cdb;
+    border-radius: 8px;
+}
+ 
+/* img всередині .about не виходить за блок */
+.about img {
+    max-width: 100%;   /* адаптивність картинок у секціях */
+    height: auto;
+}
 
 /* === SPAN — рядковий елемент === */
 
