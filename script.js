@@ -170,3 +170,98 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(dialogWithUser, 500);
     }
 });
+
+
+// ============================================================
+// ЛАБ 7 — ЗАВДАННЯ 1
+
+// --- 1а. oбробник через атрибут (onclick="onLogoClick()" в HTML) ---
+// викликається прямо з атрибута onclick на елементі #logo-img
+function onLogoClickAttr(){
+    alert("You clicked the logo!\nWelcome to Why Women Kill fan page.");
+}
+
+// --- 1б. oбробник через властивість ---
+function onLogoClickProp(){
+    alert("Yeah, that text is blue, just like a logo)");
+}
+
+const blueText = document.getElementById("blue-text");
+blueText.onclick = onLogoClickProp;
+
+// --- 1в. обробники addEventListener
+const pAboutText = document.getElementById("p-about-text");
+
+function onPAboutTextClickOne(){
+    alert("The main genre is black comedy drama.");
+}
+
+function onPAboutTextClickTwo(){
+    alert("The director is Mark Cherry.");
+}
+
+function onPAboutTextClickThree(){
+    alert("The main problem is marital infidelity.");
+}
+
+pAboutText.addEventListener("click", onPAboutTextClickOne);
+pAboutText.addEventListener("click", onPAboutTextClickTwo);
+pAboutText.addEventListener("click", onPAboutTextClickThree);
+
+// ---1г. призначено об’єкт за допомогою addEventListener, метод handleEvent, виведено елемент, 
+// на якому спрацював обробник, використовуючи event.currentTarget
+const handleObject = {
+    handleEvent(event){
+        alert("You clicked on" + event.currentTarget);
+        event.currentTarget.style.backgroundColor = "#f861da";
+    }
+}
+
+const introVideo = document.getElementById("intro");
+
+introVideo.addEventListener("click", handleObject);
+
+introVideo.addEventListener("click", function(){
+    introVideo.removeEventListener("click", handleObject);
+    alert("The intro headline is no longer clickable.");
+});
+
+// ---2а. підсвічування елементів списку при кліку миші
+const genreList = document.getElementById("genreList");
+
+genreList.onclick = function(event){
+    if(event.target.tagName === "LI"){
+        event.target.style.backgroundColor = "#f861da";
+    }
+}
+
+// ---2б-в. меню + поведінка
+const dataMenu = document.getElementById("data-menu")
+
+const menuActions = {
+    showPlot() {
+        alert("You can use the Plot page to see it");
+    },
+    showCharacters() {
+        alert("You can use the Characters page to see it");
+    },
+    showCast() {
+        alert("You can use the Cast page to see it");
+    },
+    showFact() {
+        alert("Fun fact: This series has a nonlinear storyline!");
+    },
+};
+
+// один обробник для всього меню
+dataMenu.addEventListener("click", function(event){
+    // перевірка: клік саме по кнопці + існує метод
+    if (event.target.classList.contains("js-btn")) {
+    const action = event.target.dataset.action;
+
+    if (action && menuActions[action]) {
+        menuActions[action]();
+    }
+}
+}
+);

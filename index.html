@@ -5,7 +5,6 @@
     <title>Why Women — Series</title>
     <meta name="author" content="Oksana Tsapliuk">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <script>
         window.onload = function () {
             alert("Welcome to the «Why Women Kill» series page!");
@@ -13,7 +12,8 @@
     </script>
 </head>
 <body>
-    <img src="Why_Women_Kill.png" width="500" id="top"></img>
+    <!-- ЛАБ 7, завд. 1: обробник через атрибут onclick -->
+    <img src="Why_Women_Kill.png" width="500" id="top" onclick="onLogoClickAttr()"></img>
 <nav>
     <a href="index.html" style="font-weight: bold;">Main</a> |
     <a href="plot.html">Plot</a> |
@@ -24,7 +24,7 @@
     <div class="top">
         <div class="about" id="about-the-series-div"> 
             <h2 id="about">About the series "Why Women Kill"</h2>
-            <p>Why Women Kill is a 
+            <p id="p-about-text">Why Women Kill is a 
                 <span class="highlight">black comedy drama</span> 
                 created by 
                 <span class="highlight">Mark Cherry</span>
@@ -82,7 +82,7 @@
     <div>
         <h2 id="genres">More about genres</h2>
         <p>The series combines several genre elements to create its unique tone:</p>
-        <ul type="circle">
+        <ul id="genreList" type="circle">
             <li><i>Dark Comedy:</i> This is the main genre of the series. The humor arises from 
                 horrific or serious situations, such as betrayal and murder, which are 
                 central to the plot.</li>
@@ -97,7 +97,7 @@
         <p>All these genres create the unique athmosphere of show.</p>
         </ul>
     </div>
-    <p style="color: #86e9ff; font-style: italic; font-size: 18px;">Overall, the series can be described as an anthology with elements of a soap opera, 
+    <p id="blue-text" style="color: #86e9ff; font-style: italic; font-size: 18px;">Overall, the series can be described as an anthology with elements of a soap opera, 
         using these genres to explore themes of marital infidelity, revenge, and social 
         expectations in different historical eras.</p>
         
@@ -120,6 +120,16 @@
             <button class="js-btn" onclick="domInspector()">DOM inspector</button>
             <button class="js-btn" onclick="addDynamicContent()">See hidden message!</button>
         </div>
+ 
+        <!-- ЛАБ 7, завд. 2б: меню з data-action — один обробник на весь блок -->
+        <div id="data-menu" class="js-btn-row" style="margin-top:6px; border-top: 1px solid rgba(255,255,255,0.3); padding-top:8px;">
+            <button class="js-btn" data-action="showPlot">How to go to Plot?</button>
+            <button class="js-btn" data-action="showCharacters">How to go to Characters?</button>
+            <button class="js-btn" data-action="showCast">How to go to Cast?</button>
+            <button class="js-btn" data-action="showFact">Fun fact!</button>
+        </div>
     </div>
+    
+    <script src="script.js"></script>
  </body>
 </html>
