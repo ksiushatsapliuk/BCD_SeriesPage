@@ -242,6 +242,10 @@ nav {
     margin-top: 1%;
 }
 
+#about-div {
+    cursor: grab;
+}
+
 .top .about:first-child,
 .top .about:last-child {
     box-sizing: border-box;  /* padding не збільшує ширину */

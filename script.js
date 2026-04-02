@@ -265,3 +265,76 @@ dataMenu.addEventListener("click", function(event){
 }
 }
 );
+
+// ============================================================
+// ЛАБ 8
+
+const container = document.getElementById("hover-container");
+
+if(container){
+    container.addEventListener("mouseover", function(event){
+    if (event.target.classList.contains("hover-item")){
+        event.target.style.backgroundColor = "#da20b4";
+    }
+});
+
+container.addEventListener("mouseout", function(event){
+    if (event.target.classList.contains("hover-item")){
+        // перевіряємо, що курсор точно покидає елемент, а не його дітей
+        if (!event.target.contains(event.relatedTarget)) {
+            event.target.style.backgroundColor = "";
+        }
+    }
+});
+
+const dragBox = document.getElementById("about-div");
+const textBox = document.getElementById("about-the-series-div");
+
+let isDragging = false;
+let offsetX, offsetY;
+
+dragBox.addEventListener("mousedown", function(event){
+    isDragging = true;
+    
+    offsetX = event.clientX;
+    offsetY = event.clientY;
+    
+    dragBox.style.position = "absolute";
+    dragBox.style.zIndex = "1000";
+});
+
+document.addEventListener("mousemove", function(event){
+    if(isDragging){
+        dragBox.style.left = (event.pageX - dragBox.offsetWidth / 2) + "px";
+        dragBox.style.top = (event.pageY - dragBox.offsetHeight / 2) + "px";
+    }
+});
+
+document.addEventListener("mouseup", function(event){
+    isDragging = false;
+
+    const textRect = textBox.getBoundingClientRect();
+
+    // перевірка: чи відпустили над текстом
+    const isOverText =
+        event.clientX > textRect.left &&
+        event.clientX < textRect.right &&
+        event.clientY > textRect.top &&
+        event.clientY < textRect.bottom;
+
+    // повертаємо стилі перед swap
+    dragBox.style.position = "";
+    dragBox.style.left = "";
+    dragBox.style.top = "";
+    dragBox.style.zIndex = "";
+
+    if (isOverText) {
+        const parent = dragBox.parentNode;
+
+        // swap (міняємо місцями обидва)
+        const next = dragBox.nextSibling;
+
+        parent.insertBefore(dragBox, textBox);
+        parent.insertBefore(textBox, next);
+    }
+})};
